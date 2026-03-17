@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.SmartPoliceApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/police_blue</item>
+        <item name="colorPrimaryVariant">@color/police_blue_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="Theme.SmartPoliceApp" parent="Base.Theme.SmartPoliceApp" />
+
+    <style name="KeyStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_key_normal</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">false</item>
+    </style>
+</resources>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/customKeypad">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register Complaint"
+                android:textColor="@color/police_blue"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/etComplainantName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Complainant Name"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"
+                android:inputType="textNoSuggestions"/>
+
+            <EditText
+                android:id="@+id/etMobile"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Mobile Number"
+                android:inputType="phone"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerGender"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Address"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/etIncidentDate"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Incident Date (YYYY-MM-DD)"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/etCrimeCategory"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Crime Category (Theft, Assault, etc.)"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <EditText
+                    android:id="@+id/etIncidentLocation"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:hint="Location of Incident"
+                    android:background="@android:color/white"
+                    android:padding="12dp" />
+
+                <Button
+                    android:id="@+id/btnGetLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="GPS"
+                    android:backgroundTint="@color/police_blue"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etWitnessDetails"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Witness Details (Optional)"
+                android:background="@android:color/white"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <EditText
+                    android:id="@+id/etDescription"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="120dp"
+                    android:gravity="top|start"
+                    android:hint="Detailed Description"
+                    android:background="@android:color/white"
+                    android:padding="12dp" />
+
+                <Button
+                    android:id="@+id/btnVoiceInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="120dp"
+                    android:text="MIC"
+                    android:backgroundTint="#002244"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnAiSuggestions"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="GET AI LEGAL SUGGESTIONS"
+                android:backgroundTint="#4CAF50"
+                android:textColor="@color/white"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/tvAiSuggestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AI Suggestions will appear here."
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:background="#E8F5E9"
+                android:padding="12dp"
+                android:visibility="gone"
+                android:layout_marginBottom="24dp"/>
+
+            <Button
+                android:id="@+id/btnSubmitComplaint"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/police_blue"
+                android:textColor="@color/white"
+                android:text="SUBMIT COMPLAINT"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.smartpolice.app.ui.complaint.CustomKeypad
+        android:id="@+id/customKeypad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,115 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Officer {
+  id             String      @id @default(uuid())
+  officerId      String      @unique
+  password       String
+  name           String
+  role           String      @default("OFFICER") // OFFICER, SUPERVISOR
+  station        String?
+  designation    String?     @default("Officer-in-Charge")
+  signatureImage String?     // Path to signature image
+  aadhaarNumber  String?     // Last 4 digits for verification
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+  complaints     Complaint[] @relation("OfficerComplaints")
+  documents      Document[]
+  signatures     SignatureRecord[]
+  legalDrafts    LegalDraft[]
+}
+
+model Complaint {
+  id                  String             @id @default(uuid())
+  complaintId         String             @unique // Auto Generated
+  complainantName     String
+  fatherHusbandName   String?
+  mobileNumber        String
+  address             String?
+  incidentDate        DateTime?
+  incidentTime        String?
+  incidentLocation    String?
+  latitude            Float?
+  longitude           Float?
+  crimeCategory       String?
+  incidentDescription String
+  suspectDetails      String?
+  witnessDetails      String?
+  gender              String?
+  status              String             @default("PENDING") // PENDING, FIR_REGISTERED, UNDER_INVESTIGATION, CLOSED
+  isFIR               Boolean            @default(false)
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  officerId           String?
+  officer             Officer?           @relation("OfficerComplaints", fields: [officerId], references: [id])
+  evidence            Evidence[]
+  statements          WitnessStatement[]
+  documents           Document[]
+  legalDrafts         LegalDraft[]
+}
+
+model Evidence {
+  id           String    @id @default(uuid())
+  type         String    // PHOTO, VIDEO, AUDIO, DOCUMENT
+  url          String
+  description  String?
+  latitude     Float?
+  longitude    Float?
+  uploadedBy   String?
+  uploadedAt   DateTime  @default(now())
+  complaintId  String
+  complaint    Complaint @relation(fields: [complaintId], references: [id])
+}
+
+model WitnessStatement {
+  id           String    @id @default(uuid())
+  witnessName  String
+  mobileNumber String?
+  statement    String
+  audioUrl     String?
+  recordedAt   DateTime  @default(now())
+  complaintId  String
+  complaint    Complaint @relation(fields: [complaintId], references: [id])
+}
+
+model Document {
+  id           String    @id @default(uuid())
+  documentId   String    @unique // e.g. DOC-ARREST-123
+  type         String    // NOTICE, ARREST_MEMO, SEIZURE_MEMO, WITNESS_STATEMENT, SEARCH_MEMO, CASE_DIARY, FINAL_REPORT
+  fileUrl      String
+  generatedAt  DateTime  @default(now())
+  caseId       String
+  complaint    Complaint @relation(fields: [caseId], references: [id])
+  officerId    String
+  officer      Officer   @relation(fields: [officerId], references: [id])
+  signature    SignatureRecord?
+}
+
+model SignatureRecord {
+  id           String    @id @default(uuid())
+  method       String    // INTERNAL_SIGN, AADHAAR_ESIGN
+  signedAt     DateTime  @default(now())
+  status       String    @default("SIGNED")
+  documentId   String    @unique
+  document     Document  @relation(fields: [documentId], references: [id])
+  officerId    String
+  officer      Officer   @relation(fields: [officerId], references: [id])
+}
+
+model LegalDraft {
+  id           String    @id @default(uuid())
+  type         String    // HIGH_COURT_REPLY, STATUS_REPORT, LEGAL_OPINION, COURT_SUMMARY
+  caseId       String
+  complaint    Complaint @relation(fields: [caseId], references: [id])
+  officerId    String
+  officer      Officer   @relation(fields: [officerId], references: [id])
+  content      String
+  fileUrl      String?
+  createdAt    DateTime  @default(now())
+}

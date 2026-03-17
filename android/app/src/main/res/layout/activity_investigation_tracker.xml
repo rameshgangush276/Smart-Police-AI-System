@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvTrackerCaseId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Case ID: CMP-XXXXXX"
+        android:textColor="@color/police_blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@android:color/white">
+
+        <!-- Stage 1 -->
+        <TextView
+            android:id="@+id/tvStageRegistered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. Complaint Registered"
+            android:textSize="18sp"
+            android:textColor="#333333"
+            android:padding="8dp"/>
+
+        <!-- Stage 2 -->
+        <TextView
+            android:id="@+id/tvStageFIR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. FIR Registered"
+            android:textSize="18sp"
+            android:textColor="#9E9E9E"
+            android:padding="8dp"/>
+
+        <!-- Stage 3 -->
+        <TextView
+            android:id="@+id/tvStageEvidence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. Evidence Collected"
+            android:textSize="18sp"
+            android:textColor="#9E9E9E"
+            android:padding="8dp"/>
+
+        <!-- Stage 4 -->
+        <TextView
+            android:id="@+id/tvStageWitness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4. Witness Statement Recorded"
+            android:textSize="18sp"
+            android:textColor="#9E9E9E"
+            android:padding="8dp"/>
+
+        <!-- Stage 5 -->
+        <TextView
+            android:id="@+id/tvStageArrest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5. Suspect Arrested"
+            android:textSize="18sp"
+            android:textColor="#9E9E9E"
+            android:padding="8dp"/>
+
+        <!-- Stage 6 -->
+        <TextView
+            android:id="@+id/tvStageChargesheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="6. Chargesheet Filed"
+            android:textSize="18sp"
+            android:textColor="#9E9E9E"
+            android:padding="8dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRefreshTracker"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:text="REFRESH STATUS"
+        android:backgroundTint="@color/police_blue"
+        android:textColor="@color/white" />
+
+</LinearLayout>

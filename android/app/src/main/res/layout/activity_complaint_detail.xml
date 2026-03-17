@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvDetailComplaintId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Case ID: CMP-XXXXXX"
+        android:textColor="@color/police_blue"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvDetailOverview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name: \nCrime: \nDate: "
+        android:textColor="#333333"
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnUploadEvidence"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="UPLOAD EVIDENCE"
+        android:backgroundTint="#002244"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnInvestigationTracker"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="INVESTIGATION TRACKER"
+        android:backgroundTint="#FF9800"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnRecordWitness"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="RECORD WITNESS STATEMENT"
+        android:backgroundTint="#4CAF50"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnGenerateDocument"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="GENERATE FIR DOCUMENT"
+        android:backgroundTint="#F44336"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnLegalAssistance"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="LEGAL ASSISTANCE"
+        android:backgroundTint="#673AB7"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>

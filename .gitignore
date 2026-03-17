@@ -1,0 +1,19 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+# Database
+backend/prisma/dev.db
+backend/prisma/dev.db-journal
+
+# Build
+dist/
+build/
+.next/
+out/
+
+# OS
+.DS_Store
+Thumbs.db

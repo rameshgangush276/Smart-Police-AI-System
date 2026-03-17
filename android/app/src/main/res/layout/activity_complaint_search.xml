@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Advanced Search"
+        android:textColor="@color/police_blue"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etSearchId"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/white"
+                android:hint="Complaint ID"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/etSearchName"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/white"
+                android:hint="Name (Fuzzy)"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/etSearchMobile"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/white"
+                android:hint="Mobile No."
+                android:inputType="phone"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/etSearchCrimeType"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/white"
+                android:hint="Crime Type"
+                android:padding="12dp" />
+                
+            <EditText
+                android:id="@+id/etSearchLocation"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/white"
+                android:hint="Location"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/etSearchStartDate"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:background="@android:color/white"
+                android:hint="Start (YYYY-MM-DD)"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/etSearchEndDate"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@android:color/white"
+                android:hint="End (YYYY-MM-DD)"
+                android:padding="12dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/police_blue"
+        android:text="SEARCH COMPLAINTS"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/listViewSearchResults"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@null"
+        android:dividerHeight="8dp" />
+
+</LinearLayout>

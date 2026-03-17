@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4F8"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvWitnessCaseId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Case ID: CMP-XXXXXX"
+        android:textColor="@color/police_blue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"/>
+
+    <EditText
+        android:id="@+id/etWitnessName"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Witness Name"
+        android:background="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/etWitnessMobile"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Mobile Number"
+        android:inputType="phone"
+        android:background="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Statement Details:"
+        android:textColor="@color/police_blue"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+        
+        <EditText
+            android:id="@+id/etWitnessStatement"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="150dp"
+            android:gravity="top|start"
+            android:hint="Record or type the witness statement here..."
+            android:background="@android:color/white"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnWitnessVoice"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:text="MIC"
+            android:backgroundTint="#002244"
+            android:textColor="@color/white"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSubmitStatement"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="@color/white"
+        android:text="SAVE STATEMENT"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

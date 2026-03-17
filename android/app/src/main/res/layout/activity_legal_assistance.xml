@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_color">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/police_blue"
+        app:title="Legal Assistance"
+        app:titleTextColor="@color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Input Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Case Analysis"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/police_blue"
+                        android:layout_marginBottom="12dp" />
+
+                    <EditText
+                        android:id="@+id/etCaseDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:hint="Enter case facts, evidence, or incident description..."
+                        android:gravity="top"
+                        android:padding="12dp"
+                        android:background="@color/light_gray"
+                        android:inputType="textMultiLine"
+                        android:layout_marginBottom="12dp" />
+
+                    <Button
+                        android:id="@+id/btnSuggest"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="SUGGEST LEGAL SECTIONS"
+                        android:backgroundTint="@color/police_blue"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Results Section -->
+            <TextView
+                android:id="@+id/tvSuggestionsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Suggested Sections"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/containerSuggestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Drafting Section -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDrafting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Generate Legal Draft"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/police_blue"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select Document Type"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDraftType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp" />
+
+                    <EditText
+                        android:id="@+id/etOfficerInputs"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:hint="Additional points for the reply (optional)..."
+                        android:gravity="top"
+                        android:padding="12dp"
+                        android:background="@color/light_gray"
+                        android:inputType="textMultiLine"
+                        android:layout_marginBottom="12dp" />
+
+                    <Button
+                        android:id="@+id/btnGenerateDraft"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="GENERATE PDF DRAFT"
+                        android:backgroundTint="@color/status_closed"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
