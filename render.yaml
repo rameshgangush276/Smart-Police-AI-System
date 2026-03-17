@@ -16,11 +16,10 @@ services:
       - key: PORT
         value: 10000
 
-  - type: static
+  - type: static_site
     name: smart-police-portal
-    env: static
     buildCommand: cd frontend-web && npm install && npm run build
-    staticPublishPath: ./frontend-web/dist
+    publishPath: ./frontend-web/dist
     envVars:
       - key: VITE_API_BASE_URL
         fromService:
