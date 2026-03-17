@@ -6,7 +6,7 @@ services:
     name: smart-police-backend
     env: node
     plan: free
-    region: singapore # Change to your preferred region
+    region: singapore
     buildCommand: cd backend && npm install && npx prisma generate && npm run build
     startCommand: cd backend && npm start
     envVars:
@@ -20,14 +20,6 @@ services:
         generateValue: true
       - key: PORT
         value: 10000
-
-  # ---------------------------------------------------------------------------
-  # DATABASE SERVICE (PostgreSQL)
-  # ---------------------------------------------------------------------------
-- database:
-    name: smart-police-db
-    plan: free
-    region: singapore
 
   # ---------------------------------------------------------------------------
   # FRONTEND SERVICE (React + Vite)
@@ -49,3 +41,11 @@ services:
       - type: rewrite
         source: /*
         destination: /index.html
+
+# ---------------------------------------------------------------------------
+# DATABASE SERVICE (PostgreSQL)
+# ---------------------------------------------------------------------------
+databases:
+  - name: smart-police-db
+    plan: free
+    region: singapore
