@@ -21,22 +21,6 @@ services:
       - key: PORT
         value: 10000
 
-  # ---------------------------------------------------------------------------
-  # FRONTEND SERVICE (React + Vite)
-  # ---------------------------------------------------------------------------
-  - type: static
-    name: smart-police-portal
-    region: singapore
-    buildCommand: cd frontend-web && npm install && npm run build
-    publishDir: frontend-web/dist
-    envVars:
-      - key: VITE_API_BASE_URL
-        value: https://smart-police-backend.onrender.com/api
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
-
 # ---------------------------------------------------------------------------
 # DATABASE SERVICE (PostgreSQL)
 # ---------------------------------------------------------------------------
