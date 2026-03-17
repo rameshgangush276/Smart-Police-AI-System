@@ -1,4 +1,5 @@
 {
+<<<<<<< Updated upstream
     "buildCommand": "cd frontend-web && npm install && npm run build",
     "outputDirectory": "frontend-web/dist",
     "framework": "vite",
@@ -8,4 +9,15 @@
                   "destination": "/index.html"
           }
     ]
+=======
+  "buildCommand": "cd frontend-web && npm install && npm run build",
+  "outputDirectory": "frontend-web/dist",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+>>>>>>> Stashed changes
 }

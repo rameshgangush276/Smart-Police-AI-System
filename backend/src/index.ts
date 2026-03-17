@@ -11,7 +11,15 @@ const port = process.env.PORT || 3000;
 
 app.use(helmet());
 app.use(cors({
+<<<<<<< Updated upstream
   origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'https://smart-police-portal.onrender.com'],
+=======
+  origin: [
+    'http://localhost:5173', 
+    'http://127.0.0.1:5173', 
+    'https://smart-police-portal.onrender.com'
+  ],
+>>>>>>> Stashed changes
   credentials: true
 }));
 app.use(express.json());
@@ -31,6 +39,10 @@ import signatureRoutes from './routes/signatureRoutes';
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Smart Police Case Management API is running');
+});
+
+app.get('/api/health', (req: Request, res: Response) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
 // Basic request logger
