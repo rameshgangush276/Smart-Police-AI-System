@@ -15,6 +15,7 @@ services:
                                       generateValue: true
                                         - key: PORT
                                             value: 10000
+
                                             - type: static
                                               name: smart-police-portal
                                                 env: static
@@ -26,6 +27,7 @@ services:
                                                                   type: web
                                                                         name: smart-police-backend
                                                                               property: host
+
                                                                               databases:
                                                                               - name: smart-police-db
                                                                                 plan: free
