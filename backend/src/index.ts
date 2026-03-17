@@ -11,19 +11,7 @@ const port = process.env.PORT || 3000;
 
 app.use(helmet());
 app.use(cors({
-  origin: (origin, callback) => {
-    const allowedOrigins = [
-      'http://localhost:5173',
-      'http://127.0.0.1:5173',
-      'https://smart-police-portal.onrender.com',
-      'https://smart-police-ai-system.vercel.app'
-    ];
-    if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: '*',
   credentials: true
 }));
 app.use(express.json());
